@@ -1,14 +1,14 @@
-USE_GEOIP?=yes
-USE_DYN_GEOIP?=yes
+USE_GEOIP?=no
+USE_DYN_GEOIP?=no
 
 LIBPATH?=/usr/lib64
 #LIBPATH=/usr/lib/x86_64-linux-gnu
 
 LIBS?=
-VERSION=0.2.2
+VERSION=0.2.2-cw0
 CC?=gcc
 CFLAGS?=-O2 -g -Wall
-LDFLAGS=$(LIBS)
+LDFLAGS=$(LIBS) -static
 
 ifeq ($(USE_GEOIP),yes)
 ifeq ($(USE_DYN_GEOIP),yes)
